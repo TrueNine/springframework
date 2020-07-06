@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsf="http://www.w3.org/2001/XMLSchema-instance"
+       xsf:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--通过午餐构造创建对象-->
+    <!--        <bean id="hello" class="cn.TrueNine.pojo.Pojo">-->
+    <!--            <property name="str" value="spring"/>-->
+    <!--        </bean>-->
+
+    <!--通过下标进行赋值创建对象-->
+    <!--    <bean id="hello" class="cn.TrueNine.pojo.Pojo">-->
+    <!--        <constructor-arg index="0" value="使用下标进行赋值创建的对象"/>-->
+    <!--    </bean>-->
+
+    <!--通过类型进行创建,不推荐使用-->
+    <!--    <bean id="hello" class="cn.TrueNine.pojo.Pojo">-->
+    <!--        <constructor-arg type="java.lang.String" value="233"/>-->
+    <!--    </bean>-->
+
+    <!--使用参数名进行赋值-->
+    <bean id="hello" class="cn.TrueNine.pojo.Pojo" name="pojo2,pojo3,pojo4,">
+        <constructor-arg name="str" value="23"/>
+    </bean>
+    <!--如果添加了别名,同时可以从别名获取-->
+    <alias name="hello" alias="pojo"/>
+
+</beans>

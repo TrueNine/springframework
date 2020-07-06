@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--拼接 mybatis -->
+    <import resource="mappers/connection/MybatisToSpring.xml"/>
+    <!--注入Mapper 实现类-->
+    <bean id="userMapper" class="com.truenine.mapper.impl.UserMapperImpl">
+        <property name="sqlSessionTemplate" ref="sqlSession"/>
+    </bean>
+    <bean id="userMapperTwo" class="com.truenine.mapper.impl.UserMapperImplTwo">
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+    </bean>
+</beans>

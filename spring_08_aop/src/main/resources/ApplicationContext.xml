@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="service" class="com.truenine.service.impl.ServiceImpl"/>
+    <bean id="log" class="com.truenine.log.Log"/>
+    <bean id="afterLog" class="com.truenine.log.AfterLog"/>
+
+    <!--需要 aop 约束-->
+    <aop:config>
+        <aop:pointcut id="asc" expression="execution(* com.truenine.service.impl.ServiceImpl.*(..))"/>
+        <aop:advisor advice-ref="log" pointcut-ref="asc"/>
+        <aop:advisor advice-ref="afterLog" pointcut-ref="asc"/>
+    </aop:config>
+
+    <bean id="diy" class="com.truenine.service.diy.DiyPointCut"/>
+</beans>
