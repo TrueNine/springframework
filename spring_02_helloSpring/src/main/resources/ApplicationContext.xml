@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsf="http://www.w3.org/2001/XMLSchema-instance"
+       xsf:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--使用 spring 创建对象-->
+    <!--在 spring 中,这些类被称之为: bean-->
+    <!--
+    id 变量名
+    class 对象全路径
+    property 对象中的属性设置一个值
+    -->
+    <bean id="hello" class="cn.TrueNine.pojo.Pojo">
+        <property name="str" value="spring"/>
+    </bean>
+</beans>
